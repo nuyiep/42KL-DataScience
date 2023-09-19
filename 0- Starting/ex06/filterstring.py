@@ -4,28 +4,23 @@ import sys
 def format_checking():
 	'''
 		Check if the first argv is a string
-		Check if the second argv is an int
-		If not, exit the program
+					 second argv is an int
 	'''
-	if (len(sys.argv) != 3):
+	try:
+		assert len(sys.argv) == 3
+		assert sys.argv[1] != None or sys.argv[2] != None
+		for char in sys.argv[1]:
+			assert (char.isalpha() == True or char == ' ')
+		assert sys.argv[2].isdigit() == True
+	except:
 		print("AssertionError: the arguments are bad")
 		sys.exit()
-	if (sys.argv[1] == None or sys.argv[2] == None):
-		print("AssertionError: empty content")
-		sys.exit()
-	for char in sys.argv[1]:
-		if (char.isalpha() == False and char != ' '):
-			print("AssertionError: not an alphabet")
-			sys.exit()
-	if (sys.argv[2].isdigit() == False):
-		print("AssertionError: the arguments are bad- not digit")
-		sys.exit()
 
-def ft_filter():
+def main():
 	'''
-		in python- filter(function, iterable)
-		returns items from iterable based on some criteria
+		format checking then filter the words
 	'''
+	format_checking()
 	word_list = sys.argv[1].split(' ')
 	all_word_count = [word for word in word_list 
 				   if (lambda word: len(word) > int(sys.argv[2]))(word)]
@@ -33,15 +28,6 @@ def ft_filter():
 	# 	word_count = len(word)
 	# 	if (word_count > int(sys.argv[2])):
 	# 		all_word_count.append(word)
-	return all_word_count
-
-def main():
-	'''
-		format checking then filter the words
-		then print
-	'''
-	format_checking()
-	all_word_count = ft_filter()
 	print(all_word_count)
 
 if __name__ == "__main__":
