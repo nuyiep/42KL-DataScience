@@ -19,6 +19,7 @@ for x in adults:
 
 **List comprehension**
 # From this 
+nums = [54, 22, 15, 48]
 evens = []
 for num in nums:
 	if num % 2 == 0:
@@ -26,7 +27,6 @@ for num in nums:
 print(evens)
 
 # To this
-nums = [54, 22, 15, 48]
 evens = [num for num in nums if num % 2 == 0]
 
 print(evens)
