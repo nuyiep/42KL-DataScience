@@ -5,7 +5,7 @@ def NULL_not_found(object: any) -> int:
 	elif (isinstance(object, float)):
 		print("Cheese:", object, type(object))
 		return 0
-	elif (isinstance(object, bool)):
+	elif (isinstance(object, bool) and object is False):
 		print("Fake:", object ,type(object))
 		return 0
 	elif (isinstance(object, int) and object == 0):

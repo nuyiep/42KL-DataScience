@@ -7,7 +7,7 @@ formatted_timestamp = f"{timestamp:,.4f}"
 # print(formatted_timestamp)
 formatted_scientific = f"{timestamp:.2e}"
 # print(formatted_scientific)
-print("Seconds since January 1, 1970: ", formatted_timestamp, "or",
+print("Seconds since January 1, 1970:", formatted_timestamp, "or",
 formatted_scientific, "in scientific notation")
 
 # Oct 21 2022
