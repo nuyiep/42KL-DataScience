@@ -2,6 +2,9 @@ import sys
 
 
 def count_all(string):
+    '''
+        count all
+    '''
     character_count = len(string)
     print("The text contains", character_count, "characters:")
     punctuation_chars = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
@@ -29,13 +32,19 @@ def count_all(string):
 
 
 def main():
+    """
+        Main
+    """
     if (len(sys.argv) > 2):
         print("AssertionError: more than one argument is provided")
         sys.exit()
     if (len(sys.argv) < 2):
-        user_input = input("What is the text to count? ")
-        print(user_input)
-        count_all(user_input + "\n")
+        try:
+            print("What is the text to count?")
+            user_input = sys.stdin.readline()
+        except EOFError:
+            user_input = ""
+        count_all(user_input)
     else:
         count_all(sys.argv[1])
 

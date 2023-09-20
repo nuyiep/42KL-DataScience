@@ -2,6 +2,9 @@ import sys
 
 
 def error_checking():
+    '''
+        Error checking
+    '''
     try:
         assert len(sys.argv) == 2, "the arguments are bad"
         for char in sys.argv[1]:
@@ -12,6 +15,9 @@ def error_checking():
 
 
 def convert_into_morse_code():
+    '''
+        Convert into morse code
+    '''
     morse_code_dict = {
         ' ': '/', 'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -39,6 +45,9 @@ def convert_into_morse_code():
 
 
 def main():
+    '''
+        Main
+    '''
     error_checking()
     convert_into_morse_code()
 
