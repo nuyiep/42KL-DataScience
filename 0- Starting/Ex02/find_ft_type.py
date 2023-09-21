@@ -1,6 +1,7 @@
 
 # this function accepts 1 argument named object of any type
-# return an int 
+# return an int
+# isinstance can accept multiple types
 def all_thing_is_obj(object: any) -> int:
 	type_of_parameter = type(object)
 	if (isinstance(object, str)):

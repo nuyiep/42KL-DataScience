@@ -40,8 +40,9 @@ def main():
         sys.exit()
     if (len(sys.argv) < 2):
         try:
-            print("What is the text to count?")
+            # print("What is the text to count?")
             user_input = sys.stdin.readline()
+            user_input = input()
         except EOFError:
             user_input = ""
         count_all(user_input)
@@ -54,3 +55,4 @@ if __name__ == "__main__":
 
 # \r carriage return
 # \n control d
+# readline - takes into account newline and control d- as showed in space count

@@ -36,3 +36,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# if we handle negative number, our split function needs to be general (consider all white spaces)
